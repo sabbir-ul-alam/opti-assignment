@@ -43,17 +43,42 @@ Upload Image:
 3. It retains original image size( which can be a requirement)
 4. Swagger shows request body needs to be json file
 5. Authentication takes longer for large file and faster for smaller file.
+time:    "uploadedAt": "2025-07-19T21:12:03.429130083",
 
 Upload Multiple:
 1. Max 10 file at time
 
-
-
+DeleteImage:
+1.
 
 DownloadImage: 
 1. Should require authorization
 
 
+ContentAPI(type: BLOG_POST, SOCIAL_MEDIA, EMAIL_CAMPAIGN  status: DRAFT, PUBLISHED, ARCHIVED )
+-----------
+CreatNewContent:
+1. Can create duplicate content (is that a requirement)?
+2. Can create a ARCHIVED content directly without publishing
+3. Only title and type is required and by default status get set as DRAFT
+4. scheduledtime in future, but still publishedat in null much later
+5. scheduledtime can be set in the past
+
+
+Recent Activity
+1. only shows the last five ids
+
+
+All content
+1.
+
+
+ContentDetailsByID:
+1. should not be able to see contents created by others 
+
+
+
 
 
 #######Need to check race condition among the apis##############
+Dashboard:
