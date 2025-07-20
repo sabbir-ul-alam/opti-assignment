@@ -58,11 +58,12 @@ DownloadImage:
 ContentAPI(type: BLOG_POST, SOCIAL_MEDIA, EMAIL_CAMPAIGN  status: DRAFT, PUBLISHED, ARCHIVED )
 -----------
 CreatNewContent:
-1. Can create duplicate content (is that a requirement)?
+1. Can create duplicate content (coule be a requirement)
 2. Can create a ARCHIVED content directly without publishing
-3. Only title and type is required and by default status get set as DRAFT
-4. scheduledtime in future, but still publishedat in null much later
-5. scheduledtime can be set in the past
+3. Can creat a published content directly without drafting
+4. Only title and type is required and by default status get set as DRAFT
+5. scheduledtime in future, but still publishedat in null much later
+6. scheduledtime can be set in the past
 
 
 Recent Activity
@@ -70,15 +71,23 @@ Recent Activity
 
 
 All content
-1.
+1. if no param is passed, it gives the last 10 but responseBody.first says true
+2. size param doesnt matter, it always return 10
+3. search key overrite type and status
+4. type overrites status
+5. search should be and operation but it seems theres some hierarchy
 
 
 ContentDetailsByID:
-1. should not be able to see contents created by others 
+1. should not be able to see contents created by others
+
+Update Content
+1.
+
+Delete Content
+1.
+
+Publish Content
+1. Can publish a content which is already published
 
 
-
-
-
-#######Need to check race condition among the apis##############
-Dashboard:
