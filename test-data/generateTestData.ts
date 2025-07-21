@@ -8,11 +8,12 @@ export interface UserData {
 
 
 
-// export interface ContentData {
-//   title: string;
-//   body: string;
-//   tags: string;
-// }
+export interface ContentData {
+  title: string;
+  body: string;
+  tags: string;
+  imageName: string;
+}
 
 
 
@@ -31,9 +32,17 @@ export class TestDataGenerator {
   }
 
   static uniqueBio(): string {
-        return this.generate('Article', 20);
-
+        return this.generate('Bio', 50);
   }
+
+  static uniqueContentTitle(): string{
+            return this.generate('Title', 20);
+  }
+
+  static uniqueTag(): string{
+            return this.generate('tag', 3);
+  }
+  
 
   private static generate(prefix: string, slice: number, suffix: string = ''): string {
     return `${prefix}${uuidv4().slice(0, slice)}${suffix}`;

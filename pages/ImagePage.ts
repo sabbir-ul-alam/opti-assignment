@@ -1,18 +1,22 @@
-import { Page } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
 import { BasePage } from "./BasePage";
-import { UserData } from "../test-data/generateTestData";
 import path from "path";
 
 export class ImagePage extends BasePage {
+  private readonly fileInput: Locator;
+  private readonly uploadSuccessToast: Locator;
+
   constructor(page: Page) {
     super(page);
-  }
-  async uploadImage() {
-    const img1 = path.join(__dirname, '../test-data/image1.png');
-    const img2 = path.join(__dirname, '../test-data/image2.png');
-    
-    const file =  this.page.locator('input[multiple]');
-    await file.setInputFiles([img1,img2]);
+    this.fileInput = page.locator('input[multiple]');
+    this.uploadSuccessToast = page.getByText('images uploaded successfully');
   }
 
+  async uploadImage(img1:string, img2: string): Promise<void> {
+    await this.fileInput.setInputFiles([img1, img2]);
+  }
+
+  async isImageUploaded(): Promise<void> {
+    await expect(this.uploadSuccessToast).toBeVisible({ timeout: 10000 });
+  }
 }
