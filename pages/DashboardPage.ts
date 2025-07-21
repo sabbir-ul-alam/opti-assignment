@@ -21,11 +21,7 @@ export class  DashboardPage extends BasePage{
         return parseInt((await this.totalContentCount.textContent())?.trim() || '0',10);
     }
 
-    async visitContentPage(): Promise<ContentPage>{
-        await this.contentPageLink.click();
-        return new ContentPage(this.page);
-    }
-    
+
     
     
 

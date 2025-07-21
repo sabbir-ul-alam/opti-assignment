@@ -9,6 +9,10 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.54.1",
-    "@types/node": "^24.0.15"
+    "@types/node": "^24.0.15",
+    "@types/uuid": "^10.0.0"
+  },
+  "dependencies": {
+    "uuid": "^11.1.0"
   }
 }

@@ -7,6 +7,7 @@ Profile:
 
 Dashboard:
 1. Doesnt show recent Activity
+2. Can not open conent/image/profile on new Dashboard. it always lands on Dashboard.
 
 
 Images:
@@ -26,3 +27,5 @@ Content Create:
 4. sort by title doesnt call any api
 5. even after setting image to a content, unused image count remains the same
 6. wrong updated time format in the ui.. 00:30 becomes 12:30
+
+

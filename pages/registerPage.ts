@@ -14,7 +14,7 @@ export class RegisterPage extends BasePage {
   constructor(page: Page) {
     super(page);
     this.emailInput = this.page.getByPlaceholder('your@email.com');
-    this.passwordInput = this.page.getByPlaceholder('Your password');
+    this.passwordInput = this.page.getByPlaceholder('Your password', {exact:true});
     this.confirmPasswordInput = this.page.getByPlaceholder('Confirm your password');
     this.fullNameInput = this.page.getByPlaceholder('Your full name');
     this.createAccount = this.page.getByRole('button', { name: 'Create Account' });
