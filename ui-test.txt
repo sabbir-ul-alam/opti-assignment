@@ -1,0 +1,27 @@
+Profile:
+1. visitng profile does not call api to sync up, until we do referesh
+2. allows whitespace as fullname
+3. password validation from ui is  6 digit, api has no length validation
+4. UI- doesnt check if new and confirmNewPassword matches
+5. image upload korar porer profile icon e image show kore na
+
+Registration:
+1.
+
+
+Images:
+1. UI says 10 mb max, but still uploads more than that.
+2. There no checking of myfile
+3. UI waits for all the requests to be completed befroe showing any images.
+4. cant handle a large number of concurrent download image call, for example say 30.
+5. can search with user name
+6. Download, delete and view button are hidden 
+
+
+
+Content Create:
+1. default scheduledtime time shows old time by default. it should not allow to set in past
+2. No tooltip for the publish button on content list page
+3. we can edit even after publishing- so whats the difference between draft and publish
+4. sort by title doesnt call any api
+5. even after setting image to a content, unused image count remains the same
