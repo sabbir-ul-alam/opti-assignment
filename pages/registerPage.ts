@@ -1,14 +1,15 @@
 import { Page, Locator } from '@playwright/test';
 import { BasePage } from './BasePage';
-// import { UserData } from '../test-data/generateTestData';
+import { UserData } from '../test-data/generateTestData';
 
-export class SignupPage extends BasePage {
+export class RegisterPage extends BasePage {
   // Form locators
   private readonly emailInput: Locator;
   private readonly passwordInput: Locator;
   private readonly fullNameInput: Locator;
   private readonly confirmPasswordInput: Locator;
   private readonly createAccount: Locator;
+  private readonly url: string = '/register';
 
   constructor(page: Page) {
     super(page);
@@ -20,7 +21,7 @@ export class SignupPage extends BasePage {
   }
 
   async visit(): Promise<void> {
-    await this.page.goto('/register');
+    await this.page.goto(this.url);
   }
 
 

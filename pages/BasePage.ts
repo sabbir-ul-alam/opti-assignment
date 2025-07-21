@@ -1,4 +1,7 @@
 import { Page, Locator } from '@playwright/test';
+import { ContentPage } from './ContentPage';
+import { ImagePage } from './ImagePage';
+import { ProfilePage } from './ProfilePage';
 
 
 export class BasePage {
@@ -8,17 +11,36 @@ export class BasePage {
     this.page = page;
   }
 
-  //Common locators that are used across multiple pages
-  protected get homeLink(): Locator {
-    return this.page.getByRole('link', { name: 'Home' });
+  // Common locators that are used across multiple pages
+  protected get dashboardLink(): Locator {
+    return this.page.getByRole('link', { name: 'Dashboard' });
   }
 
-  protected get settingsLink(): Locator {
-    return this.page.getByRole('link', { name: 'Settings' });
+  protected get contentPageLink(): Locator {
+    return this.page.getByRole('link', { name: 'Content' });
   }
 
-  protected get newArticleLink(): Locator {
-    return this.page.getByRole('link', { name: 'New Article' });
+  protected get imagePageLink(): Locator {
+    return this.page.getByRole('link', { name: 'Images' });
   }
+  
+  protected get profilePageLink(): Locator {
+    return this.page.getByRole('link', { name: 'Profile' });
+  }
+
+  
+    async visitContentPage(): Promise<ContentPage>{
+        await this.contentPageLink.click();
+        return new ContentPage(this.page);
+    }
+     async visitImagePage(): Promise<ImagePage>{
+        await this.imagePageLink.click();
+        return new ImagePage(this.page);
+    }
+     async visitProfilePage(): Promise<ProfilePage>{
+        await this.profilePageLink.click();
+        return new ProfilePage(this.page);
+    }
+
 
 } 
