@@ -5,8 +5,8 @@ Profile:
 4. UI- doesnt check if new and confirmNewPassword matches
 5. image upload korar porer profile icon e image show kore na
 
-Registration:
-1.
+Dashboard:
+1. Doesnt show recent Activity
 
 
 Images:
@@ -25,3 +25,4 @@ Content Create:
 3. we can edit even after publishing- so whats the difference between draft and publish
 4. sort by title doesnt call any api
 5. even after setting image to a content, unused image count remains the same
+6. wrong updated time format in the ui.. 00:30 becomes 12:30
