@@ -2,8 +2,6 @@
   "name": "opti-assignment",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
-
   "scripts": {},
   "keywords": [],
   "author": "",
@@ -11,7 +9,7 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.54.1",
-    "@types/node": "^24.0.14",
+    "@types/node": "^24.0.15",
     "@types/uuid": "^10.0.0"
   },
   "dependencies": {
