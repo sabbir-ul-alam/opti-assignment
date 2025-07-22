@@ -1,6 +1,6 @@
 import path from 'path';
 import { expect, test as signupSetup } from '@playwright/test';
-import { RegisterPage } from '../pages/RegisterPage';
+import { RegisterPage } from '../pages/RegisterPage.ts';
 import { TestDataGenerator, UserData } from '../test-data/generateTestData';
 import fs from 'fs';
 
