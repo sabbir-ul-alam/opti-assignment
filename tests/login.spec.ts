@@ -26,10 +26,6 @@ test.describe("Login Scenario", () => {
         fs.writeFileSync(filePath, JSON.stringify(loginData, null, 2), 'utf-8');
 
     });
-    test.beforeEach(async ({ page }) => {
-        await page.goto('/');
-        await page.evaluate(() => localStorage.clear());
-    });
 
     test('Login with valid data', async ({ page }) => {
         const loginPage = new LoginPage(page);

@@ -35,9 +35,13 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-       {
+    {
+      name: 'login',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
       name: 'registration-setup',
-      testMatch: /.*\.setup\.ts/, 
+      testMatch: /.*\.setup\.ts/,
       teardown: 'save old data'
 
     },
@@ -49,7 +53,7 @@ export default defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        storageState:  path.join(__dirname,'/playwright/.auth/auth.json')
+        storageState: path.join(__dirname, '/playwright/.auth/auth.json')
 
       },
       dependencies: ['registration-setup'],
