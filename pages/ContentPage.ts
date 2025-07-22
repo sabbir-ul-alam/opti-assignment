@@ -39,7 +39,7 @@ export class ContentPage extends BasePage {
     await this.tagsInput.fill(content.tags);
     await this.browseButton.click();
     await this.imageModalText.waitFor({ state: 'visible', timeout: 5000 });
-    await this.imageSelectButton.filter({ hasText: content.imageName }).click();
+    await this.imageSelectButton.filter({ hasText: content.imageName }).first().click();
     await this.saveContentButton.click();
     await this.page.getByText('Create New Content').waitFor({ state: 'hidden' });
   }

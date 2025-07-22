@@ -37,6 +37,8 @@ export default defineConfig({
   projects: [
     {
       name: 'login',
+      testMatch: /.*login\.spec\.ts/,
+
       use: { ...devices['Desktop Chrome'] },
     },
     {
@@ -51,6 +53,8 @@ export default defineConfig({
     },
     {
       name: 'chromium',
+      testIgnore: /.*login\.spec\.ts/,
+
       use: {
         ...devices['Desktop Chrome'],
         storageState: path.join(__dirname, '/playwright/.auth/auth.json')
@@ -61,13 +65,21 @@ export default defineConfig({
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      testIgnore: /.*login\.spec\.ts/,
+
+      use: {
+        ...devices['Desktop Firefox'],
+        storageState: path.join(__dirname, '/playwright/.auth/auth.json')
+
+      },
+      dependencies: ['registration-setup'],
+
     },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {

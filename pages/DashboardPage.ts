@@ -16,9 +16,7 @@ export class DashboardPage extends BasePage {
     this.recentUploadCount = page.getByText('Recent uploads').locator('..').locator('p').last();
     this.activeCampaignCount = page.getByText('Active campaigns').locator('..').locator('p').last();
     this.unusedUploadCount = page.getByText('Unused uploads').locator('..').locator('p').last();
-    const userData = JSON.parse(fs.readFileSync('./test-data/user-data.json', 'utf-8'));
-
-    this.welcomeHeading = page.getByRole('heading', { name: `Welcome back, ${userData.fullName}!` });
+    this.welcomeHeading = page.getByRole('heading', { name: "Welcome back" });
   }
 
   async visit(): Promise<void> {
