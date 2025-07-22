@@ -1,6 +1,6 @@
 import path from 'path';
 import { expect, test as signupSetup } from '@playwright/test';
-import { RegisterPage } from '../pages/RegisterPage';
+import { RegistrationPage } from '../pages/RegistrationPage';
 import { TestDataGenerator, UserData } from '../test-data/generateTestData';
 import fs from 'fs';
 
@@ -17,7 +17,7 @@ fs.writeFileSync(filePath, JSON.stringify(user, null, 2), 'utf-8');
 const authFile = path.join(__dirname, '../playwright/.auth/auth.json');
 
 signupSetup('Global setup: Sign up user and store auth state', async ({ page }) => {
-  const signupPage = new RegisterPage(page);
+  const signupPage = new RegistrationPage(page);
 
   await signupSetup.step('Visit login/signup page', async () => {
     await signupPage.visit();

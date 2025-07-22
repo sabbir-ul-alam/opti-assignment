@@ -2,7 +2,7 @@ import { Page, Locator } from '@playwright/test';
 import { BasePage } from './BasePage';
 import { UserData } from '../test-data/generateTestData';
 
-export class RegisterPage extends BasePage {
+export class RegistrationPage extends BasePage {
   private readonly emailInput: Locator;
   private readonly passwordInput: Locator;
   private readonly confirmPasswordInput: Locator;
