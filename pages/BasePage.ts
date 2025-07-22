@@ -35,18 +35,19 @@ export class BasePage {
   // }
   async visitImagePage(): Promise<ImagePage> {
     await this.imagePageLink.click();
-    const ImagePage = require('./ImagePage').ImagePage;
+    
+    const {ImagePage} = await import('./ImagePage');
     return new ImagePage(this.page);
   }
   async visitProfilePage(): Promise<ProfilePage> {
     await this.profilePageLink.click();
-    const ProfilePage = require('./ProfilePage').ProfilePage;
+    const {ProfilePage} = await import('./ProfilePage');
     return new ProfilePage(this.page);
   }
 
   async visitContentPage(): Promise<ContentPage> {
     await this.contentPageLink.click();
-    const ContentPage = require('./ContentPage').ContentPage;
+    const {ContentPage} = await import('./ContentPage');
 
     // const { ContentPage } = await import('./ContentPage');
     return new ContentPage(this.page);

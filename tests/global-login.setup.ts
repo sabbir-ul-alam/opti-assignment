@@ -4,6 +4,12 @@ import { RegisterPage } from '../pages/RegisterPage';
 import { TestDataGenerator, UserData } from '../test-data/generateTestData';
 import fs from 'fs';
 
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
 const user: UserData = {
   email: TestDataGenerator.uniqueEmail(),
   fullName: TestDataGenerator.uniqueFullname(),

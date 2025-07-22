@@ -2,6 +2,11 @@ import { test, expect } from '@playwright/test';
 import { DashboardPage } from '../pages/DashboardPage';
 import { TestDataGenerator, UserData, ContentData } from '../test-data/generateTestData';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 test.describe('End to end user journey', () => {
     const newBio: string = TestDataGenerator.uniqueBio();
