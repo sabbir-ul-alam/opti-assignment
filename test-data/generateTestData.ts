@@ -6,7 +6,12 @@ export interface UserData {
   bio: string;
 }
 
-
+export interface UserRegistrationData{
+  email: string;
+  fullName: string;
+  password: string;
+  confirmPassword: string;
+}
 
 export interface ContentData {
   title: string;

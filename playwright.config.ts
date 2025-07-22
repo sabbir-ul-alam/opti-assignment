@@ -36,7 +36,7 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
        {
-      name: 'login-setup',
+      name: 'registration-setup',
       testMatch: /.*\.setup\.ts/, 
       teardown: 'save old data'
 
@@ -52,7 +52,7 @@ export default defineConfig({
         storageState:  path.join(__dirname,'/playwright/.auth/auth.json')
 
       },
-      dependencies: ['login-setup'],
+      dependencies: ['registration-setup'],
     },
 
     {

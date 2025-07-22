@@ -1,7 +1,6 @@
 import { expect, Locator, Page } from "@playwright/test";
 import { BasePage } from "./BasePage";
-import userData from '../test-data/user-data.json';
-
+import fs from 'fs';
 export class DashboardPage extends BasePage {
   private readonly totalContentCount: Locator;
   private readonly recentUploadCount: Locator;
@@ -17,6 +16,8 @@ export class DashboardPage extends BasePage {
     this.recentUploadCount = page.getByText('Recent uploads').locator('..').locator('p').last();
     this.activeCampaignCount = page.getByText('Active campaigns').locator('..').locator('p').last();
     this.unusedUploadCount = page.getByText('Unused uploads').locator('..').locator('p').last();
+    const userData = JSON.parse(fs.readFileSync('./test-data/user-data.json', 'utf-8'));
+
     this.welcomeHeading = page.getByRole('heading', { name: `Welcome back, ${userData.fullName}!` });
   }
 
